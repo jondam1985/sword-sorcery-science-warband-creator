@@ -175,7 +175,7 @@ const weapons = [
     {
       name: "Bite/Sting",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["wounding"],
       maneuvers: ["Weak Spot"],
       points: 2
@@ -183,7 +183,7 @@ const weapons = [
     {
       name: "Bludgeon",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["crushing"],
       maneuvers: ["Smash"],
       points: 2
@@ -191,7 +191,7 @@ const weapons = [
     {
       name: "Claws",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["quick"],
       maneuvers: ["Pounce"],
       points: 3
@@ -199,7 +199,7 @@ const weapons = [
     {
       name: "Missile",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["medium range"],
       maneuvers: [],
       points: 1
@@ -207,7 +207,7 @@ const weapons = [
     {
       name: "Horns",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: [],
       maneuvers: ["Throw", "Trample"],
       points: 1
@@ -215,7 +215,7 @@ const weapons = [
     {
       name: "Tail",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["reach"],
       maneuvers: ["Sweep"],
       points: 2
@@ -223,7 +223,7 @@ const weapons = [
     {
       name: "Tentacles",
       type: "Natural",
-      hands: "-",
+      hands: [0],
       properties: ["short range", "entangle"],
       maneuvers: ["Drag"],
       points: 1

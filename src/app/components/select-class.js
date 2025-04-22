@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { classes } from "../data/classes"
+import { maxedClasses, hasWindow } from "../utils/functions";
 
-export default function SelectClass() {
+export default function SelectClass({characterId}) {
 
     const [selectedClass, setSelectedClass] = useState(null)
     const [selectedClassData, setSelectedClassData] = useState({})
@@ -15,19 +16,16 @@ export default function SelectClass() {
         setSelectedClassData(classes.find(c => c.name === selectRef.current.value) || null)
         selectRef.current.setAttribute("data-selected-class", newClass)
         setSelectedClass(newClass)
+        if (hasWindow) {
+            document.getElementById(characterId).removeAttribute("class");
+            classes.find(c => c.name === selectRef.current.value).weapons.forEach(c => {
+                document.getElementById(characterId).classList.add(`allowed-weapon-${c}`)
+            })
+        }
     }
 
     useEffect(() => {
-        if(typeof window !== undefined) {
-            classes.forEach(c => {
-                console.log(document.querySelectorAll(`select[data-selected-class="${c.name.replace(" ", "")}"]`).length)
-                if (c.limit !== null && document.querySelectorAll(`select[data-selected-class="${c.name.replace(" ", "")}"]`).length === c.limit ) {
-                    document.body.classList.add(`maxed-class-${c.name.replace(" ", "")}`)
-                } else {
-                    document.body.classList.remove(`maxed-class-${c.name.replace(" ", "")}`)
-                }
-            })
-        }
+        maxedClasses(classes)
     }, [selectedClass])
 
     return (

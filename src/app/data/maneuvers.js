@@ -48,7 +48,7 @@ const maneuvers = {
       useWhen: "this model takes an Interact action.",
       effect: "All allied models within 1 stick gain +1 to all Def, Mgt, and Will rolls until the next round."
     },
-    MagicShield: {
+    "Magic Shield": {
       useWhen: "a Melee or Ranged Attack is declared against a model wielding this weapon.",
       effect: "Roll this model’s Will instead of Def against this attack."
     },
@@ -56,7 +56,7 @@ const maneuvers = {
       useWhen: "This model takes an Interact action and is equipped with a Flamer or an RPG. Ignore aim requirement.",
       effect: "This model makes an Attack Action with Blast AoE centered on the model, roll 2D8 or 3C. This model is also affected by the Blast."
     },
-    MovingTarget: {
+    "Moving Target": {
       useWhen: "An enemy model takes a Move action and is in LoS of this model at any point, and this model is Ready.",
       effect: "This model may immediately take a Shoot Attack action with -D1 or -C1 against the moving enemy model. If the enemy model becomes Down or Staggered the movement is not completed. Ignore Aim requirement."
     },
@@ -117,9 +117,13 @@ const maneuvers = {
       useWhen: "this model takes a Melee Attack action.",
       effect: "Make a 2d8 Mgt Melee Attack against every model within a ½ stick of the attacking model."
     },
-    WeakSpot: {
+    "Weak Spot": {
       useWhen: "this model hits a target with this weapon.",
       effect: "+1 to the Attack Result Table roll."
     }
   };
+
+  export {
+    maneuvers
+  }
   
