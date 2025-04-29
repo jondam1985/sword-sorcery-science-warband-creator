@@ -13,7 +13,7 @@ const maneuvers = {
     },
     Buttstroke: {
       useWhen: "this model is BtB with an enemy model.",
-      effect: "Make a weak Melee Attack against the enemy model."
+      effect: "Use an interact action to make a 2D6 or 2C attack against the enemy model."
     },
     Cure: {
       useWhen: "this model uses an Interact action while BtB with a model in your warband.",
@@ -92,10 +92,6 @@ const maneuvers = {
     Set: {
       useWhen: "an enemy model that started its activation more than 1 stick away moves BtB with this model.",
       effect: "Immediately make a Melee Attack against the enemy model with this weapon."
-    },
-    Shove: {
-      useWhen: "This model takes an Interact action and is BtB with an enemy model.",
-      effect: "Make an unopposed Mgt Roll. If successful, move the target BtB enemy model up to 1 stick."
     },
     Smash: {
       useWhen: "this model takes a Melee Attack action using this weapon.",

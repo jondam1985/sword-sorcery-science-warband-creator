@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
+    "baseUrl": "sword-sorcery-science-warband-builder-creator-obj-initial-build/src/",
     "paths": {
-      "@/styles/*": ["styles/*"],
-      "@/components/*": ["components/*"],
-      "@/data/*": ["data/*"],
+      "@styles/*": ["styles/*"],
+      "@components/*": ["components/*"],
+      "@data/*": ["data/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

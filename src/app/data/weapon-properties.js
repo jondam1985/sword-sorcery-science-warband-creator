@@ -8,7 +8,7 @@ const weaponProperties = {
   "entangle": "Do not roll on the Attack Result Table after a successful attack. Instead, until the end of this round the target is -1 to Spd and -D1 or -C1 to Def and Mgt rolls.",
   "item": "You may not make Melee or Ranged attacks with this weapon.",
   "light": "This weapon emits light (p 10).",
-  "mounted": "Only a Cavalry model may use this weapon. A model with this weapon may have a 2d10 Mgt even though this is a one-handed weapon.",
+  "mounted": "A Cavalry model with this weapon may have a 2d10 Mgt even though this is a one-handed weapon.",
   "multishot": "This weapon can take two Shoot Actions before needing to reload.",
   "piercing +1": "Rolls on the Attack Result Table add the listed bonus.",
   "piercing +2": "Rolls on the Attack Result Table add the listed bonus.",

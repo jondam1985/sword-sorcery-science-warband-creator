@@ -121,13 +121,6 @@ const classes = [
     traits: ["Knows the Taunt maneuver."]
   },
   {
-    name: "Foot Soldier",
-    points: 2,
-    limit: 2,
-    weapons: ["Simple", "Martial", "Ranged"],
-    traits: ["Knows the Shove maneuver"]
-  },
-  {
     name: "Healer",
     points: 1,
     limit: 1,

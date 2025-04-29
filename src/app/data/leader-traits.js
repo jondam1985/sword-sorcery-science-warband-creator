@@ -6,7 +6,6 @@ const abilities = {
     MageKiller: "+D1 or +C1 to Attack rolls vs. models that can cast spells. +D1 or +C1 to Will rolls vs. spells.",
     Majestic: "Any time a model in your warband has LoS to the leader and makes a Will roll, that model may use the leader’s Will instead.",
     Noble: "Attack actions targeting this leader instead target any other model in the leader’s warband that is within ½ stick and is fewer points than the Leader.",
-    Mercenary: "Once per round, when a model from your warband is touching a down or staggered enemy, it can take a Use Item action to make the enemy model out of action.",
     Monstrous: "Non-leader models must win a Will roll vs. your leader to move BtB.",
     Politician: "During the Initiative Phase, before rolling, take one of your Warband within LOS of your leader out of action to make all other models in the Warband ready, remove the broken condition from your warband, and gain +1DT to this Initiative roll.",
     Savant: "This model has a front arch of 360°.",

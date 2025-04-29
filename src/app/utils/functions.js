@@ -2,20 +2,38 @@ const hasWindow = () => {
     return typeof window !== undefined;
 }
 
-const maxedClasses = (data) => {
+const removeClassName = (className, element = document.body) => {
     if (hasWindow) {
-        data.forEach(c => {
-            console.log(document.querySelectorAll(`select[data-selected-class="${c.name.replace(" ", "")}"]`).length)
-            if (c.limit !== null && document.querySelectorAll(`select[data-selected-class="${c.name.replace(" ", "")}"]`).length === c.limit ) {
-                document.body.classList.add(`maxed-class-${c.name.replace(" ", "")}`)
-            } else {
-                document.body.classList.remove(`maxed-class-${c.name.replace(" ", "")}`)
-            }
-        })
+        element.classList.remove(className)
     }
+}
+
+const addClassName = (className, element = document.body) => {
+    if (hasWindow) {
+        element.classList.add(className)
+    }
+}
+
+const randomId = () => {
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+}
+
+const addPoints = (id) => {
+    if (hasWindow) {
+        const character = document.getElementById(id)
+        const points = Array.from(character.querySelectorAll('[data-points]')).reduce((acc, curr) => {
+            acc += parseInt(curr.getAttribute('data-points'), 10);
+            return acc;
+        }, 0);
+        document.getElementById(`${id}-character-points`).innerHTML = points
+    }
+
 }
 
 export {
     hasWindow,
-    maxedClasses,
+    removeClassName,
+    addClassName,
+    randomId,
+    addPoints
 }

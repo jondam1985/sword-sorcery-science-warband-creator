@@ -5,15 +5,7 @@ const weapons = [
       type: "Simple",
       hands: [1],
       properties: [],
-      maneuvers: [],
-      points: 1
-    },
-    {
-      name: "Bellringer",
-      type: "Simple",
-      hands: [1],
-      properties: [],
-      maneuvers: [],
+      maneuvers: ["Bellringer"],
       points: 1
     },
     {
@@ -232,41 +224,41 @@ const weapons = [
     // Might-based Ranged Weapons
     {
       name: "Bow",
-      type: "Might Ranged",
+      type: "Ranged",
       hands: [2],
-      properties: ["long range", "reload 1"],
+      properties: ["might based", "long range", "reload 1"],
       maneuvers: [],
       points: 2
     },
     {
       name: "Javelin/Spear",
-      type: "Might Ranged",
+      type: "Ranged",
       hands: [1],
-      properties: ["medium range"],
+      properties: ["might based", "medium range"],
       maneuvers: [],
       points: 1
     },
     {
       name: "Sling",
-      type: "Might Ranged",
+      type: "Ranged",
       hands: [1],
-      properties: ["long range", "reload 1"],
+      properties: ["might based", "long range", "reload 1"],
       maneuvers: [],
       points: 1
     },
     {
       name: "Throwing axe/Club",
-      type: "Might Ranged",
+      type: "Ranged",
       hands: [1],
-      properties: ["short range"],
+      properties: ["might based", "short range"],
       maneuvers: [],
       points: 1
     },
     {
       name: "Throwing Knives",
-      type: "Might Ranged",
+      type: "Ranged",
       hands: [1],
-      properties: ["short range", "quick", "weak"],
+      properties: ["might based", "short range", "quick", "weak"],
       maneuvers: [],
       points: 1
     },
@@ -274,7 +266,7 @@ const weapons = [
     // Firepower-based Ranged Weapons
     {
       name: "Auto / Energy Pistol",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1],
       properties: ["aim 1", "medium range", "multishot", "quick"],
       maneuvers: ["Buttstroke"],
@@ -282,7 +274,7 @@ const weapons = [
     },
     {
       name: "Auto / Energy Rifle",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [2],
       properties: ["aim 1", "piercing +1", "medium range", "multishot", "quick"],
       maneuvers: ["Buttstroke"],
@@ -290,7 +282,7 @@ const weapons = [
     },
     {
       name: "Crossbow",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1,2],
       properties: ["long range", "piercing +1", "reload 2"],
       maneuvers: ["Buttstroke"],
@@ -298,7 +290,7 @@ const weapons = [
     },
     {
       name: "Harquebus",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [2],
       properties: ["long range", "piercing +2", "reload 3"],
       maneuvers: ["Buttstroke"],
@@ -306,7 +298,7 @@ const weapons = [
     },
     {
       name: "Flamer",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1,2],
       properties: ["aim 2", "cone AoE"],
       maneuvers: ["Martyr"],
@@ -314,7 +306,7 @@ const weapons = [
     },
     {
       name: "Pistolet",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1],
       properties: ["short range", "piercing +2", "reload 2"],
       maneuvers: ["Buttstroke"],
@@ -322,15 +314,15 @@ const weapons = [
     },
     {
       name: "RPG",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1,2],
-      properties: ["aim 2", "blast AoE", "long lange"],
+      properties: ["aim 2", "blast AoE", "long range"],
       maneuvers: ["Martyr"],
       points: 4
     },
     {
       name: "Shotgun",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [1,2],
       properties: ["piercing +1 (+2 if target at ½ stick or closer)", "cone AoE", "multishot", "reload 2"],
       maneuvers: ["Buttstroke"],
@@ -338,7 +330,7 @@ const weapons = [
     },
     {
       name: "Sniper Rifle",
-      type: "Firepower Ranged",
+      type: "Ranged",
       hands: [2],
       properties: ["aim 2", "line AoE", "piercing +2"],
       maneuvers: ["Buttstroke"],

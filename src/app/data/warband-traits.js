@@ -4,6 +4,7 @@ const warbandTraits = {
     "Comrades In Arms": "Models in this warband may all have 2 classes, however, 1 class must be shared by every model in the warband and not have a limit to how many a warband may have.",
     Coven: "This warband may have up to 3 magic users and 3 beasts.",
     "Deep Dwellers": "Not affected by darkness. +1 Mgt to attacks with hammers and picks.",
+    "Deer Hunters": "All ranged weapons cost -1 point. All non-ranged weapons roll Attack Actions with -D1 or -C1.",
     Fanatics: "Roll Will with +D1 or +C1 for all rolls except Cast Spell actions.",
     "Forces Of Chaos": "Once per round force your opponent to reroll a single maximum die result or a single maximum card result.",
     "Forces Of Law": "Once per round reroll a single die result or single card result of 1.",
