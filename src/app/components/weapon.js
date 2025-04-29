@@ -4,9 +4,9 @@ import { maneuvers } from "../data/maneuvers"
 import { weaponProperties } from "../data/weapon-properties"
 import { input, remove } from "../utils/ui"
 import { addPoints } from "../utils/functions"
-function Weapon({ characterId, id, removeWeapon }) {
+function Weapon({ characterId, id, removeWeapon, increaseInteraction }) {
 
-    const weaponCategories = weapons.reduce((acc, weapon, increaseInteraction) => {
+    const weaponCategories = weapons.reduce((acc, weapon) => {
         if (!acc.includes(weapon.type)) {
             acc.push(weapon.type)
         }
