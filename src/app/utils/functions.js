@@ -25,7 +25,20 @@ const addPoints = (id) => {
             acc += parseInt(curr.getAttribute('data-points'), 10);
             return acc;
         }, 0);
-        document.getElementById(`${id}-character-points`).innerHTML = points
+        document.getElementById(`${id}-character-points`).innerHTML = points;
+    }
+
+}
+
+const addWarbandPoints = () => {
+    if(hasWindow) {
+        if(document.querySelectorAll(".character-points-value").length > 0)  {
+            const points = Array.from(document.querySelectorAll(".character-points-value")).reduce((acc, curr) => {
+                acc = acc + parseInt(curr.innerHTML);
+                return acc;
+            }, 0)
+            document.querySelector(".warband-points-value").innerHTML = points;
+        }
     }
 
 }
@@ -35,5 +48,6 @@ export {
     removeClassName,
     addClassName,
     randomId,
-    addPoints
+    addPoints,
+    addWarbandPoints
 }

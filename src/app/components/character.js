@@ -7,7 +7,7 @@ import { attributes } from "../data/attributes"
 import { randomId } from "../utils/functions"
 import { input, remove, button } from "../utils/ui"
 import { addPoints } from "../utils/functions"
-const Character = ({ id, removeCharacter }) => {
+const Character = ({ id, removeCharacter, increaseInteraction }) => {
 
     const classRef = useRef(null)
     const secondaryClassRef = useRef(null)
@@ -38,6 +38,7 @@ const Character = ({ id, removeCharacter }) => {
     const handleAttributeChange = (e) => {
         e.target.setAttribute("data-points", e.target.value)
         setAttributesCount(attributesCount + 1)
+        increaseInteraction()
     }
 
     const addWeapon = () => {
@@ -58,6 +59,7 @@ const Character = ({ id, removeCharacter }) => {
 
     useEffect(() => {
         addPoints(id)
+        increaseInteraction()
     }, [classSelectCount, secondaryClassSelectCount, weapons.length, spells.length, attributesCount])
 
     return (
@@ -117,17 +119,17 @@ const Character = ({ id, removeCharacter }) => {
                 </div>
                 <div className="weapons mb-2.5">
                     <h4 className="text-xl font-bold">Weapons</h4>
-                    {weapons.map((weapon) => <Weapon key={weapon} id={weapon} characterId={id} removeWeapon={removeWeapon} />)}
+                    {weapons.map((weapon) => <Weapon key={weapon} id={weapon} characterId={id} removeWeapon={removeWeapon} increaseInteraction={increaseInteraction} />)}
                 </div>
                 <hr />
                 <div className="spells mt-2.5">
                     <h4 className="text-xl font-bold">Spells</h4>
-                    {spells.map((spell) => <Spell key={spell} id={spell} characterId={id} removeSpell={removeSpell} />)}
+                    {spells.map((spell) => <Spell key={spell} id={spell} characterId={id} removeSpell={removeSpell} increaseInteraction={increaseInteraction} />)}
                 </div>
             </div>
 
             <div className="absolute top-2.5 right-2.5 flex items-center">
-                <p className="character-points mr-4">Character points: <b id={`${id}-character-points`}>0</b></p>
+                <p className="character-points mr-4">Character points: <b className="character-points-value" id={`${id}-character-points`}>0</b></p>
                 <label htmlFor="leader"><b>Leader</b></label>
                 <input id="leader" name="leader" type="checkbox" className="ml-1 inline-block mr-4" onChange={handleLeaderChange} />
                 <button aria-label="Remove character" onClick={() => removeCharacter(id)} className={`${remove}`}>&times;</button>

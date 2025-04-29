@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Character from "./character"
 import { warbandTraits } from "../data/warband-traits"
 import { input, button } from "../utils/ui"
-import { randomId } from "../utils/functions"
+import { addWarbandPoints, randomId } from "../utils/functions"
 
 const Warband = () => {
 
@@ -12,6 +12,7 @@ const Warband = () => {
 
     const [selectedTrait, setSelectedTrait] = useState(null)
     const [warbandCharacters, setWarbandCharacters] = useState([])
+    const [interactionCounter, setInteractionCounter] = useState(0)
 
     const handleSelectTrait = () => {
         const selectedTrait = selectTraitRef.current.value
@@ -25,6 +26,14 @@ const Warband = () => {
     const removeCharacter = (id) => {
         setWarbandCharacters(warbandCharacters.filter(character => character !== id))
     }
+
+    const increaseInteraction = () => {
+        setInteractionCounter(interactionCounter + 1)
+    }
+
+    useEffect(() => {
+        addWarbandPoints()
+    }, [interactionCounter])
 
     return (
         <div className="warband col-span-12 gap-2.5">
@@ -45,7 +54,7 @@ const Warband = () => {
                 </div>
                 <div className="warband-trait-info col-span-12">
                     <p className="inline"><b>Trait description: </b></p>
-                    <p className="inline">{Object.entries(warbandTraits).find(([trait, description]) => trait === selectedTrait)?.[1]}</p>
+                    <p className="inline">{Object.entries(warbandTraits).find(([trait]) => trait === selectedTrait)?.[1]}</p>
                 </div>
                 <div className="warband-points absolute top-2.5 right-2.5">
                     <p>Warband points: <b><span className="warband-points-value">0</span></b></p>
@@ -55,7 +64,7 @@ const Warband = () => {
             <div className="warband-characters col-span-12 grid grid-cols-12 gap-2.5 relative">
                 <h2 className="text-2xl font-black my-2.5 col-span-12">TROOPS</h2>
                 {warbandCharacters.map((character) => (
-                    <Character key={character} id={character} removeCharacter={removeCharacter} />
+                    <Character key={character} id={character} removeCharacter={removeCharacter} increaseInteraction={increaseInteraction} />
                 ))}
                 <button onClick={addCharacter} className={`${button} absolute top-4 left-[7rem]`}>Add Character</button>
             </div>

@@ -6,7 +6,7 @@ import { input, remove } from "../utils/ui"
 import { addPoints } from "../utils/functions"
 function Weapon({ characterId, id, removeWeapon }) {
 
-    const weaponCategories = weapons.reduce((acc, weapon) => {
+    const weaponCategories = weapons.reduce((acc, weapon, increaseInteraction) => {
         if (!acc.includes(weapon.type)) {
             acc.push(weapon.type)
         }
@@ -25,6 +25,7 @@ function Weapon({ characterId, id, removeWeapon }) {
 
     useEffect(() => {
         addPoints(characterId)
+        increaseInteraction()
     }, [weaponSelectCount])
 
     return (

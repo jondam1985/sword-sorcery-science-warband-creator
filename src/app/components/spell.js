@@ -3,7 +3,7 @@ import { spells } from "../data/spells"
 import { input, remove } from "../utils/ui"
 import { addPoints } from "../utils/functions"
 
-function Spell({ characterId, id, removeSpell }) {
+function Spell({ characterId, id, removeSpell, increaseInteraction }) {
 
     const spellRef = useRef(null)
     const [spell, setSpell] = useState({})
@@ -18,6 +18,7 @@ function Spell({ characterId, id, removeSpell }) {
 
     useEffect(() => {
         addPoints(characterId)
+        increaseInteraction()
     }, [spellSelectCount])
 
     return (
